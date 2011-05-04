@@ -1,0 +1,19 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use FindBin;
+use lib "$FindBin::Bin/../lib";
+
+use SMTP::Proxy;
+
+my $server = SMTP::Proxy->new(
+   mail_host => "test01",
+   endpoint => "mx01.local",
+   port => 10025,
+);
+
+$server->run;
+
+
